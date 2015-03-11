@@ -3,7 +3,16 @@ export KEYTIMEOUT=1
 powerline-daemon -q
 . /Users/peter/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
+#set vim key bindings
 bindkey -v
+#extra vim like keybindings
+bindkey '^p' up-history
+bindkey '^n' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+bindkey '^f' history-incremental-search-forward
 
 #set history size
 export HISTSIZE=2000
