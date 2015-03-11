@@ -6,7 +6,7 @@ bindkey -v
 #set history size
 export HISTSIZE=2000
 #set history file
-export HISTFILE="$HOME/.zsh_history"
+export HISTFILE=~/.zsh_history
 #enable history saving on exit
 export SAVEHIST=$HISTSIZE
 
