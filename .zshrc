@@ -26,3 +26,6 @@ zstyle :compinstall filename '/Users/peter/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+#aliases
+alias vummath=~/.bin/vummath.sh
