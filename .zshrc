@@ -1,4 +1,6 @@
 export KEYTIMEOUT=1
+#start powerline
+powerline-daemon -q
 . /Users/peter/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 bindkey -v
@@ -29,3 +31,7 @@ compinit
 
 #aliases
 alias vummath=~/.bin/vummath.sh
+
+#start tmux sessions and attach to general
+~/.bin/tmux_start.sh
+tmux a -t general
