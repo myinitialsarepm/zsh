@@ -40,7 +40,24 @@ compinit
 
 #aliases
 alias vummath=~/.bin/vummath.sh
+alias develop=~/.bin/develop
+#
+#tmux aliases/functions
+alias tm='tmux send-keys -t '
+tcd () {
+	tmux setw synchronize-panes on
+	tmux send-keys 'cd '$1 C-m
+	tmux setw synchronize-panes off
+}
 
 #start tmux sessions and attach to general
 ~/.bin/tmux_start.sh
 tmux a -t general
+
+#autojump
+#export FPATH="$FPATH:/opt/local/share/zsh/site-functions/"
+#if [ -f /opt/local/etc/profile.d/autojump.zsh ]; then
+#    . /opt/local/etc/profile.d/autojump.zsh
+#fi
+
+. /usr/sbin/warp_scripts/warp.zsh
