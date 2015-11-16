@@ -1,7 +1,6 @@
 export KEYTIMEOUT=1
 #start powerline
-powerline-daemon -q
-. /Users/peter/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+.  /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 #set vim key bindings
 bindkey -v
@@ -41,6 +40,8 @@ compinit
 #aliases
 alias vummath=~/.bin/vummath.sh
 alias develop=~/.bin/develop
+alias ls="ls -G"
+alias ll="ls -alhG"
 #
 #tmux aliases/functions
 alias tm='tmux send-keys -t '
@@ -51,8 +52,8 @@ tcd () {
 }
 
 #start tmux sessions and attach to general
-~/.bin/tmux_start.sh
-tmux a -t general
+#~/.bin/tmux_start.sh
+#tmux a -t general
 
 #autojump
 #export FPATH="$FPATH:/opt/local/share/zsh/site-functions/"
@@ -60,4 +61,4 @@ tmux a -t general
 #    . /opt/local/etc/profile.d/autojump.zsh
 #fi
 
-. /usr/sbin/warp_scripts/warp.zsh
+#. /usr/sbin/warp_scripts/warp.zsh
