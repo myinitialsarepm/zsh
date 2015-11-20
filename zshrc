@@ -25,6 +25,9 @@ setopt hist_ignore_all_dups
 #don't add commands preceded with a space to history
 setopt hist_ignore_space
 
+#enable corrections
+setopt correct
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
@@ -40,9 +43,20 @@ compinit
 #aliases
 alias vummath=~/.bin/vummath.sh
 alias develop=~/.bin/develop
-alias ls="ls -G"
-alias ll="ls -alhG"
-#
+
+if [ $(uname -s) = "Darwin" ]
+then
+	alias ls="ls -G"
+	alias ll="ls -alhG"
+elif [ $(uname -s) = "Linux" ]
+then
+	alias ls="ls --color=auto"
+	alias ll="ls -alh --color=auto"
+fi
+
+alias less="less -R" #less will interpret color sequences properly
+export CLICOLOR_FORCE=true #ls will send color codes even when piped
+
 #tmux aliases/functions
 alias tm='tmux send-keys -t '
 tcd () {
@@ -54,11 +68,5 @@ tcd () {
 #start tmux sessions and attach to general
 #~/.bin/tmux_start.sh
 #tmux a -t general
-
-#autojump
-#export FPATH="$FPATH:/opt/local/share/zsh/site-functions/"
-#if [ -f /opt/local/etc/profile.d/autojump.zsh ]; then
-#    . /opt/local/etc/profile.d/autojump.zsh
-#fi
 
 #. /usr/sbin/warp_scripts/warp.zsh
