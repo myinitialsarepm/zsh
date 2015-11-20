@@ -1,6 +1,12 @@
 export KEYTIMEOUT=1
 #start powerline
-.  /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [ $(uname -s) = "Darwin" ]
+then
+	.  /opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+elif [ $(uname -s) = "Linux" ]
+then
+	. /home/peter/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
 
 #set vim key bindings
 bindkey -v
