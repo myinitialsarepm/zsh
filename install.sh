@@ -1,3 +1,4 @@
 #!/bin/sh
-ln -fs ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -fs ~/.dotfiles/zsh/zprofile ~/.zprofile
+ZSH_FOLDER=$(cd $(dirname $0) && pwd)
+ln -fs $ZSH_FOLDER/zshrc ~/.zshrc
+ln -fs $ZSH_FOLDER/zprofile ~/.zprofile
